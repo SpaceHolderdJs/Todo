@@ -1,0 +1,11 @@
+.todo {
+  width: 100%;
+  background: #2d2d2d;
+  margin: 10px 10px 0px 0px;
+  border-radius: 20px;
+
+  .completed {
+    opacity: 0.7;
+    text-decoration: line-through;
+  }
+}
