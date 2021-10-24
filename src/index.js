@@ -4,17 +4,18 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import { createStore, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga";
+import { compose, createStore, applyMiddleware } from "redux";
+
 import allReducers from "./reducers";
 import { Provider } from "react-redux";
-
-const sagaMiddleware = createSagaMiddleware();
+import thunk from "redux-thunk";
 
 const store = createStore(
   allReducers,
-  applyMiddleware(sagaMiddleware),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
 
 ReactDOM.render(

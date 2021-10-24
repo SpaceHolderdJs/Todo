@@ -8,7 +8,7 @@ import Toolbar from "@mui/material/Toolbar";
 
 export default function Header() {
   const dispatch = useDispatch();
-  const tabs = ["create", "todos"];
+  const tabs = ["create", "todos", "posts"];
 
   return (
     <AppBar position="relative" sx={{ background: "#1d1d1d" }}>

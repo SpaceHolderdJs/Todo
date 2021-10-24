@@ -1,6 +1,8 @@
 import React, { useEffect, useCallback } from "react";
 import { Box, List, Typography } from "@mui/material";
 
+import { fetchTodos } from "../actions";
+
 import styles from "../styles/todos.module.scss";
 
 import Todo from "./Todo";
@@ -28,7 +30,8 @@ const Todos = () => {
   }, [todos]);
 
   useEffect(() => {
-    getTodos(10);
+    // getTodos(10);
+    dispatch(fetchTodos(10));
   }, []);
 
   return (
